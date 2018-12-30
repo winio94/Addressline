@@ -26,14 +26,12 @@ class JacocoPlugin implements Plugin<Project> {
             tasks.jacocoTestReport.dependsOn(tasks.withType(Test))
             tasks.jacocoTestCoverageVerification.dependsOn(tasks.withType(Test))
             tasks.build.dependsOn('jacocoTestReport', 'jacocoTestCoverageVerification')
-            project.ext.jacocoExcludes = []
 
             afterEvaluate {
                 tasks.jacocoTestCoverageVerification.configure { task ->
                     violationRules {
                         rule {
                             element = 'CLASS'
-                            excludes = project.jacocoExcludes
                             limit {
                                 counter = 'LINE'
                                 minimum = 1.0
