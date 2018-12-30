@@ -16,4 +16,5 @@
 ```
 
 * In order to build project & run tests, please run `./gradlew clean build` in project root directory.
-* In order to get familiar with API use cases, please take a look at _<PROJECT_ROOT>/algo/src/test/groovy/com/winio94/AppTest.groovy_.
+* In order to get familiar with API use cases, please take a look at `com.winio94.AppTest` test class located in `algo` module.
+* In order to perform conversion, please use `com.winio94.App` class located in `algo` module. 
