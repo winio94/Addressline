@@ -1,0 +1,20 @@
+import build.PitestPlugin
+
+plugins {
+    id 'groovy'
+    id 'java'
+}
+apply plugin: PitestPlugin
+
+repositories {
+    jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    compile gradleApi()
+    compile group: 'org.json', name: 'json', version: '20180813'
+    testCompile localGroovy()
+}

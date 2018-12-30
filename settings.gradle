@@ -1,0 +1,3 @@
+rootProject.name = 'addressline'
+include 'buildSrc'
+include 'algo'

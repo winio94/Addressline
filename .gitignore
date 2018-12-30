@@ -1,0 +1,16 @@
+/.idea/
+/.gradle/
+/buildSrc/.idea/
+/buildSrc/.gradle/
+out
+/gradle.properties
+*.iml
+*.ipr
+*.iws
+/build/
+/*/build/
+/*/*/build/
+/testing*.properties
+/testing/installations
+/.shelf/
+*.DS_Store

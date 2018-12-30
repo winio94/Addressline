@@ -1,0 +1,37 @@
+import build.JacocoPlugin
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    configurations.maybeCreate('pitest')
+    dependencies {
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.3.0'
+        pitest 'org.pitest:pitest-junit5-plugin:0.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'info.solidsoft.pitest'
+    apply plugin: JacocoPlugin
+
+    dependencies {
+        implementation 'com.google.guava:guava:23.0'
+        implementation 'org.apache.commons:commons-lang3:3.8.1'
+        implementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
